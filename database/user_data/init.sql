@@ -7,13 +7,3 @@ CREATE DATABASE users(
     password_hash VARCHAR(256) NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
 );
-
-
-CREATE DATABASE user_data(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    address VARCHAR(100) NOT NULL,
-    phone VARCHAR(100) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    INDEX (user_id)
-);
-
